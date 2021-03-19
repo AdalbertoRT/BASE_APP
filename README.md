@@ -9,6 +9,7 @@ Estrutura React Native pré configurada com Redux e Redux-Persist. Pronta para c
 
  
 ### 2º	Arquivo App.js 
+~~~
 import React from 'react';
 import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/lib/integration/react';
@@ -25,9 +26,10 @@ const App = () => {
 };
 
 export default App;
+~~~
 
-
-### 3º	Arquivo Store.js 
+### 3º	Arquivo Store.js
+~~~
 /* cria o store contendo todos os reducers */
 
 import {createStore} from 'redux';
@@ -49,9 +51,10 @@ const persistedReducers = persistReducer(
 
 export const store = createStore(persistedReducers);
 export const persistor = persistStore(store);
+~~~
 
-
-### 4º	Criar os Reducers  
+### 4º	Criar os Reducers 
+~~~
 /* Cria os reducers para cada tipo de dado (Exemplo: userReducer – para dados do usuário)*/
 
 /*Exemplo de state(dados) de usuário vindos de uma requisição, webservice etc*/
@@ -72,9 +75,10 @@ export default (state = initialState, action) => {
 
   return state;
 };
+~~~
 
-
-### 5º	Arquivo index.js dentro da pasta reducers  
+### 5º	Arquivo index.js dentro da pasta reducers
+~~~
 /* src/reducers/index.js (unifica todos os reducers)*/
 
 import {combineReducers} from 'redux';
@@ -83,9 +87,10 @@ import userReducer from './userReducer';
 export default combineReducers({
   user: userReducer,
 });
+~~~
 
-
-### 6º	Chamando dados nas telas (pages/screens)  
+### 6º	Chamando dados nas telas (pages/screens)
+~~~
 /* Nas telas (ex: página Home) conectamos as informações dos reducers passadas pelo Provider do redux */
 
 import React from 'react';
@@ -167,7 +172,7 @@ const styles = StyleSheet.create({
 
 /* o export deve ser agora no connect, seguido da execução da tela */
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
-
+~~~
 
 
 
