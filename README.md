@@ -1,17 +1,19 @@
 # BASE_APP
-Estrutura React Native pré configurada com Redux e Redux-Persist. Pronta para criação de app.
 
+Estrutura React Native pré configurada com Redux e Redux-Persist. Pronta para criação de app.
 
 ## Configurando Redux e Redux-Persist no React-Native
 
-### 1º	Estrutura de pasta para colocar dentro do projeto
-/* Após a criação base do projeto - "npx react-native init <Nome-do-Projeto>" - deve-se inserir 
- a estrutura de pastas e arquivos abaixo na raiz do projeto. */
- 
+### 1º Estrutura de pasta para colocar dentro do projeto
+
+/_ Após a criação base do projeto - "npx react-native init <Nome-do-Projeto>" - deve-se inserir
+a estrutura de pastas e arquivos abaixo na raiz do projeto. _/
+
 ![Estrutura de pastas e arquivos](./src/assets/estrutura-de-pastas-redux.jpg?raw=true)
- 
-### 2º	Arquivo App.js 
-~~~
+
+### 2º Arquivo App.js
+
+```
 import React from 'react';
 import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/lib/integration/react';
@@ -28,10 +30,11 @@ const App = () => {
 };
 
 export default App;
-~~~
+```
 
-### 3º	Arquivo Store.js
-~~~
+### 3º Arquivo Store.js
+
+```
 /* cria o store contendo todos os reducers */
 
 import {createStore} from 'redux';
@@ -53,10 +56,11 @@ const persistedReducers = persistReducer(
 
 export const store = createStore(persistedReducers);
 export const persistor = persistStore(store);
-~~~
+```
 
-### 4º	Criar os Reducers 
-~~~
+### 4º Criar os Reducers
+
+```
 /* Cria os reducers para cada tipo de dado (Exemplo: userReducer – para dados do usuário)*/
 
 /*Exemplo de state(dados) de usuário vindos de uma requisição, webservice etc*/
@@ -77,10 +81,11 @@ export default (state = initialState, action) => {
 
   return state;
 };
-~~~
+```
 
-### 5º	Arquivo index.js dentro da pasta reducers
-~~~
+### 5º Arquivo index.js dentro da pasta reducers
+
+```
 /* src/reducers/index.js (unifica todos os reducers)*/
 
 import {combineReducers} from 'redux';
@@ -89,10 +94,11 @@ import userReducer from './userReducer';
 export default combineReducers({
   user: userReducer,
 });
-~~~
+```
 
-### 6º	Chamando dados nas telas (pages/screens)
-~~~
+### 6º Chamando dados nas telas (pages/screens)
+
+```
 /* Nas telas (ex: página Home) conectamos as informações dos reducers passadas pelo Provider do redux */
 
 import React from 'react';
@@ -128,7 +134,7 @@ const Home = (props) => {
   );
 };
 
-/* A função mapStateToProps() pega as informações do state do reducer e transforma em props para a Tela. 
+/* A função mapStateToProps() pega as informações do state do reducer e transforma em props para a Tela.
 Em outras palavras faz a leitura dos dados. */
 const mapStateToProps = (state) => {
   return {
@@ -137,7 +143,7 @@ const mapStateToProps = (state) => {
   };
 };
 
-/* A função mapDispatchToProps() executa ações de acordo com os dados passados no dispatch para o state do reducer. 
+/* A função mapDispatchToProps() executa ações de acordo com os dados passados no dispatch para o state do reducer.
 Em outras palavras faz a escrita dos dados. Essas ações(métodos) se transformam em props para a tela. */
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -176,8 +182,4 @@ const styles = StyleSheet.create({
 
 /* o export deve ser agora no connect, seguido da execução da tela */
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
-~~~
-
-
-
-
+```

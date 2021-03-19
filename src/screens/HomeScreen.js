@@ -1,4 +1,4 @@
-/* Nas telas (ex: página de perfil) conectamos as informações dos reducers passadas pelo Provider do redux */
+/* Nas telas (ex: página Home) conectamos as informações dos reducers passadas pelo Provider do redux */
 
 import React from 'react';
 import {SafeAreaView, Text, StyleSheet, Animated, Easing} from 'react-native';
