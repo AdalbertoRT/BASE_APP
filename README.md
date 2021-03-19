@@ -5,7 +5,7 @@ Estrutura React Native pré configurada com Redux e Redux-Persist. Pronta para c
 ## Configurando Redux e Redux-Persist no React-Native
 
 ### 1º	Estrutura de pasta para colocar dentro do projeto
->/* Após a criação base do projeto - "npx react-native init <Nome-do-Projeto>" - deve-se inserir a estrutura de pastas e arquivos abaixo na raiz do projeto*/
+/* Após a criação base do projeto - "npx react-native init <Nome-do-Projeto>" - deve-se inserir a estrutura de pastas e arquivos abaixo na raiz do projeto*/
 
  
 ### 2º	Arquivo App.js 
@@ -17,8 +17,8 @@ import {store, persistor} from './src/Store';
 
 const App = () => {
   return (
-    >/* Provider englobará todo o aplicativo, ele que disponibiliza os dados a serem persistidos por todo o app*/
-    >/* PersistGate recupera os dados salvos no dispositivo - (AsyncStorage) */
+    /* Provider englobará todo o aplicativo, ele que disponibiliza os dados a serem persistidos por todo o app*/
+    /* PersistGate recupera os dados salvos no dispositivo - (AsyncStorage) */
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}></PersistGate>
     </Provider>
@@ -30,7 +30,7 @@ export default App;
 
 ### 3º	Arquivo Store.js
 ~~~
->/* cria o store contendo todos os reducers */
+/* cria o store contendo todos os reducers */
 
 import {createStore} from 'redux';
 import {persistStore, persistReducer} from 'redux-persist';
