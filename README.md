@@ -8,7 +8,7 @@ Estrutura React Native pré configurada com Redux e Redux-Persist. Pronta para c
 /* Após a criação base do projeto - "npx react-native init <Nome-do-Projeto>" - deve-se inserir 
  a estrutura de pastas e arquivos abaixo na raiz do projeto. */
  
-![estrutura de pastas e arquivos](estrutura-de-pastas-redux.png?raw=true)
+![Estrutura de pastas e arquivos](./src/assets/estrutura-de-pastas-redux.jpg?raw=true)
  
 ### 2º	Arquivo App.js 
 ~~~
