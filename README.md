@@ -5,7 +5,8 @@ Estrutura React Native pré configurada com Redux e Redux-Persist. Pronta para c
 ## Configurando Redux e Redux-Persist no React-Native
 
 ### 1º	Estrutura de pasta para colocar dentro do projeto
-/* Após a criação base do projeto - "npx react-native init <Nome-do-Projeto>" - deve-se inserir a estrutura de pastas e arquivos abaixo na raiz do projeto*/
+/* Após a criação base do projeto - "npx react-native init <Nome-do-Projeto>" - deve-se inserir 
+ a estrutura de pastas e arquivos abaixo na raiz do projeto. */
 
  
 ### 2º	Arquivo App.js 
@@ -126,7 +127,8 @@ const Home = (props) => {
   );
 };
 
-/* A função mapStateToProps()  pega as informações do state do reducer e transforma em props para a Tela. Em outras palavras faz a leitura dos dados. */
+/* A função mapStateToProps() pega as informações do state do reducer e transforma em props para a Tela. 
+Em outras palavras faz a leitura dos dados. */
 const mapStateToProps = (state) => {
   return {
     title: state.example.title /* prop title */,
@@ -134,7 +136,8 @@ const mapStateToProps = (state) => {
   };
 };
 
-/* A função mapDispatchToProps()  executa ações de acordo com os dados passados no dispatch para o state do reducer. Em outras palavras faz a escrita dos dados. Essas ações(métodos) se transformam em props para a tela. */
+/* A função mapDispatchToProps() executa ações de acordo com os dados passados no dispatch para o state do reducer. 
+Em outras palavras faz a escrita dos dados. Essas ações(métodos) se transformam em props para a tela. */
 const mapDispatchToProps = (dispatch) => {
   return {
     /* prop setTitle() */
